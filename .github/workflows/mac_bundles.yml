@@ -126,7 +126,7 @@ jobs:
         run: |
           npm install --global create-dmg
           
-          create-dmg InVesalius\ 3.1.app
+          create-dmg InVesalius.app
           ls
           
 
