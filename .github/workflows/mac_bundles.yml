@@ -100,7 +100,7 @@ jobs:
       - name: Fix brain name ai weight
         if: ${{ matrix.ai_ready == 1 }}
         run: |
-          move ./ai/brain_mri_t1/weights.pt ./ai/brain_mri_t1/brain_mri_t1.pt
+          mv ./ai/brain_mri_t1/weights.pt ./ai/brain_mri_t1/brain_mri_t1.pt
 
       - name: Generate InVesalius .app bundle
         run: |
