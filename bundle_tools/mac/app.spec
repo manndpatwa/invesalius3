@@ -152,7 +152,7 @@ coll = COLLECT(exe,
 
 # Create macOS app bundle
 app = BUNDLE(coll,
-             name='InVesalius.app',
+             name='InVesalius 3.1.app',
              icon='./icons/invesalius.icns',
              bundle_identifier='org.invesalius.app',
              info_plist={
