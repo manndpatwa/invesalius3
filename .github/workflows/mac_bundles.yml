@@ -125,7 +125,8 @@ jobs:
       - name: Create DMG
         run: |
           npm install --global create-dmg
-          ls dist
+          create-dmg InVesalius 3.1.app
+          ls
 
       # - name: Upload artifact of package normal file
       #   if: ${{ matrix.ai_ready == 0}}
@@ -136,14 +137,14 @@ jobs:
       #     retention-days: 2
       #     path: ./installer/*.exe
 
-  #     - name: Upload artifact of package ai-ready file
-  #       if: ${{ matrix.ai_ready == 1}}
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         overwrite: true
-  #         name: invesalius_package_app_ai-ready
-  #         retention-days: 2
-  #         path: ./installer/InVesalius3.app
+      # - name: Upload artifact of package ai-ready file
+      #   if: ${{ matrix.ai_ready == 1}}
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     overwrite: true
+      #     name: invesalius_package_app_ai-ready
+      #     retention-days: 2
+      #     path: ./installer/InVesalius3.app
 
   #     - name: Delete previous nightly release
   #       run: gh release delete nightly --yes --cleanup-tag
@@ -153,7 +154,7 @@ jobs:
   # publish_packages:
   #   name: publish packages
   #   needs: build-mac-arm
-  #   runs-on: macos-latest
+  #   runs-on: macos-14
   #   steps:
   #     - uses: actions/download-artifact@v4
   #       with:
