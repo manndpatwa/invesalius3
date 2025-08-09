@@ -25,6 +25,7 @@ jobs:
 
       - name: Put current date into a variable
         run: |
+          uname -p
           DATE=$(date +"%Y-%m-%d")
           echo "DATE=$DATE" >> $GITHUB_ENV
 
@@ -127,7 +128,6 @@ jobs:
           npm install --global create-dmg
           
           create-dmg dist/InVesalius\ 3.1.app || true
-          ls
           
 
       # - name: Upload artifact of package normal file
