@@ -1,4 +1,4 @@
-name: generate nightly bundles
+name: generate x86 mac nightly bundles
 
 on:
   schedule:
