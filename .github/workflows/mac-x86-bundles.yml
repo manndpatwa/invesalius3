@@ -33,9 +33,9 @@ jobs:
       - name: install venv and sync dependencies
         run: |
           brew install libomp
-          export CFLAGS="-I$(brew --prefix libomp)/include"
-          export CPPFLAGS="-I$(brew --prefix libomp)/include"
-          export LDFLAGS="-L$(brew --prefix libomp)/lib"
+          # export CFLAGS="-I$(brew --prefix libomp)/include"
+          # export CPPFLAGS="-I$(brew --prefix libomp)/include"
+          # export LDFLAGS="-L$(brew --prefix libomp)/lib"
           uv sync --all-extras
 
       - name: Get InVesalius version
