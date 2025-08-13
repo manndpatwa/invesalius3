@@ -97,8 +97,10 @@ jobs:
       - name: Create DMG
         run: |
           npm install --global create-dmg
-          create-dmg --dmg-title="Invesalius-${{matrix.architecture}}.dmg" "dist/InVesalius 3.1.app"  || true
+          create-dmg "dist/InVesalius 3.1.app"  || true
           ls
+          mv InVesalius\3.1\3.1.dmg InVesalius_${{matrix.architecture}}.dmg
+          
 
       - name: Upload artifact of package ai-ready file
         if: ${{ matrix.ai_ready == 1 }}
