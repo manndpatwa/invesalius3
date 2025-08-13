@@ -99,6 +99,11 @@ jobs:
             name: invesalius_package_exe_ai-ready
             retention-days: 2
             path: ./installer/*.exe
+            
+        - name: Delete previous nightly release
+          run: gh release delete nightly --yes --cleanup-tag
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build-mac:
     name: build mac packages
     runs-on: macos-14
@@ -220,10 +225,6 @@ jobs:
       - name: Show collected files
         run: ls -lh
         
-      - name: Delete previous nightly release
-        run: gh release delete nightly --yes --cleanup-tag
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Nightly Release
         uses: softprops/action-gh-release@v2
