@@ -45,7 +45,6 @@ jobs:
         - name: copy .pyd files to invesalius_cy
           run: Copy-Item -Path invesalius_cy\Release\* -Destination invesalius_cy -Recurse -Force
   
-        # AI weights (same as in mac job)
         - name: Download mandible ai weight
           if: ${{ matrix.ai_ready == 1 }}
           uses: suisei-cn/actions-download-file@818d6b7dc8fe73f2f924b6241f2b1134ca1377d9
