@@ -17,10 +17,14 @@ jobs:
         - uses: actions/checkout@v4
           with:
             submodules: true
-  
+        - name: ls and pwd
+          run: |
+            pwd
+            ls
+            
         - name: Put current date into a variable
           run: |
-            ls
+    
             $DATE=& Get-Date -format yyyy-MM-dd
             echo "DATE=$DATE" >> $env:GITHUB_ENV
   
