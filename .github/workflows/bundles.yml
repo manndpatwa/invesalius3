@@ -20,6 +20,7 @@ jobs:
   
         - name: Put current date into a variable
           run: |
+            ls
             $DATE=& Get-Date -format yyyy-MM-dd
             echo "DATE=$DATE" >> $env:GITHUB_ENV
   
