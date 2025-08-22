@@ -140,8 +140,7 @@ jobs:
           export CFLAGS="-I$(brew --prefix libomp)/include"
           export CPPFLAGS="-I$(brew --prefix libomp)/include"
           export LDFLAGS="-L$(brew --prefix libomp)/lib"
-          rm invesalius/__init__.py
-          rm invesalius_cy/__init__.py
+          rm __init__.py
           OpenMP_ROOT=$(brew --prefix)/opt/libomp uv sync --all-extras
 
       - name: Get InVesalius version
